@@ -8,7 +8,7 @@ cloudinary.config({
 });
 
 export async function handleUpload(file: string) {
-    const res = await cloudinary.uploader.upload(file, { resource_type: "auto" });
+    const res = await cloudinary.uploader.upload(file, { folder: "Test", resource_type: "auto" });
 
     return res;
 }
