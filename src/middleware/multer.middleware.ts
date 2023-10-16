@@ -19,7 +19,6 @@ function runMiddleware(req: Request, res: Response, fn: any) {
 export const handler = async (req: Request, res: Response) => {
     try {
         await runMiddleware(req, res, myUploadMiddleware);
-        console.log(req.file);
         const cldRes = await handleUpload(req.file.path);
         res.json(cldRes);
         console.log(cldRes, 'uploaded successfully');
