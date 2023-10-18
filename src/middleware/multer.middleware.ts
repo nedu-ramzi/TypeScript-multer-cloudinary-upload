@@ -23,7 +23,7 @@ export const handler = async (req: Request, res: Response) => {
         res.json(cldRes);
         console.log(cldRes, 'uploaded successfully');
 
-    } catch (error) {
+    } catch (error: any) {
         console.log(error, 'there is a problem');
         res.send({ message: error.message })
     }
